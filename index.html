@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STEP Digital Marketing | Seu site no ar em 7 dias</title>
+<meta name="description" content="Criamos seu site profissional e colocamos no ar em 7 dias após a aprovação do projeto. Domínio incluso gratuitamente por 1 ano.">
+<meta name="theme-color" content="#1F2226">
+<meta property="og:title" content="Seu site no ar em 7 dias | STEP Digital Marketing">
+<meta property="og:description" content="Site profissional no ar em 7 dias após a aprovação do projeto. Domínio grátis por 1 ano.">
+<meta property="og:image" content="assets/hero-1800.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/step-app-icon-32px.png">
+<link rel="apple-touch-icon" href="assets/step-app-icon-180px.png">
+<link rel="preload" href="fonts/Inter-var.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="assets/hero-1800.jpg" imagesrcset="assets/hero-900.jpg 900w, assets/hero-1800.jpg 1800w" imagesizes="(max-width: 768px) 100vw, 62vw">
+
+<style>
+/* ---------- Fonts ---------- */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-var.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Tokens (STEP brand) ---------- */
+:root {
+  --graphite: #1F2226;
+  --graphite-hover: #33373D;
+  --green: #3DFF6E;
+  --green-hover: #2EEB5E;
+  --white: #FFFFFF;
+  --offwhite: #FAFAF8;
+  --fallback: #EFEFEC;
+  --slate: #5A6070;
+
+  --gutter: 80px;
+  --radius-btn: 12px;
+  --radius-panel: 28px;
+  --maxw: 1280px;
+  --ease: 150ms ease;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: var(--offwhite);
+  color: var(--graphite);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+:focus-visible { outline: 3px solid var(--graphite); outline-offset: 3px; border-radius: 4px; }
+.on-dark :focus-visible { outline-color: var(--green); }
+
+.container { width: 100%; max-width: calc(var(--maxw) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--graphite); color: var(--white); padding: 12px 18px;
+  border-radius: 8px; font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: 16px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  height: 64px; padding: 0 32px;
+  border: 0; border-radius: var(--radius-btn);
+  font: 700 19px/1 "Inter", system-ui, sans-serif;
+  text-decoration: none; cursor: pointer; white-space: nowrap; flex: none;
+  transition: background var(--ease), color var(--ease), transform var(--ease);
+}
+.btn .arrow { font-size: 22px; line-height: 1; transition: transform var(--ease); }
+.btn:hover .arrow { transform: translateX(3px); }
+.btn-primary { background: var(--green); color: var(--graphite); }
+.btn-primary:hover { background: var(--green-hover); color: var(--graphite); }
+.btn-dark { background: var(--graphite); color: var(--white); }
+.btn-dark:hover { background: var(--graphite-hover); color: var(--white); }
+.btn-sm { height: 48px; padding: 0 20px; font-size: 16px; border-radius: 10px; gap: 10px; }
+.btn-sm .arrow { font-size: 18px; }
+
+/* ---------- Brand marker (symbol echo) ---------- */
+.marker { display: flex; gap: 6px; }
+.marker span { width: 14px; height: 14px; border-radius: 3px; }
+.marker span:first-child { background: var(--graphite); margin-top: 14px; }
+.marker span:last-child { background: var(--green); }
+.on-dark .marker span:first-child { background: var(--white); }
+
+/* ---------- Highlighter + custom diagonal E ---------- */
+.hl { display: inline-block; position: relative; letter-spacing: -0.02em; white-space: nowrap; }
+.hl::before {
+  content: ""; position: absolute; z-index: 0;
+  left: -0.06em; right: -0.06em; bottom: 0.04em; height: 0.34em;
+  background: var(--green);
+}
+.hl > span { position: relative; }
+.e-glyph {
+  display: inline-block; position: relative;
+  width: 0.56em; height: 0.727em; margin-right: 0.05em; vertical-align: baseline;
+}
+.e-glyph i { position: absolute; left: 0; background: currentColor; }
+.e-glyph .stem { top: 0; bottom: 0; width: 0.19em; }
+.e-glyph .arm-top,
+.e-glyph .arm-bot { width: 100%; height: 0.16em; clip-path: polygon(0 0, 100% 0, calc(100% - 0.16em) 100%, 0 100%); }
+.e-glyph .arm-top { top: 0; }
+.e-glyph .arm-bot { bottom: 0; }
+.e-glyph .arm-mid { top: calc(50% - 0.075em); width: 86%; height: 0.15em; clip-path: polygon(0 0, 100% 0, calc(100% - 0.15em) 100%, 0 100%); }
+
+/* =========================================================
+   HERO — variação 1b
+   ========================================================= */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 720px; max-height: 900px;
+  background: var(--offwhite);
+  overflow: hidden;
+}
+.hero-media {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 62%;
+  background: var(--fallback);
+}
+.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-accent {
+  position: absolute; right: 0; bottom: 0; width: 22%; height: 14px;
+  background: var(--green); pointer-events: none;
+}
+.hero-header {
+  position: absolute; top: 0; left: 0; width: 38%; height: 104px;
+  padding: 0 var(--gutter);
+  display: flex; align-items: center; z-index: 2;
+}
+.logo { display: block; }
+.logo img { width: 190px; height: 56px; object-fit: contain; object-position: left center; }
+
+.hero-panel {
+  position: absolute; left: var(--gutter); top: 50%; transform: translateY(-44%);
+  width: 720px; z-index: 1;
+  background: var(--white);
+  border-radius: 4px var(--radius-panel) var(--radius-panel) 4px;
+  padding: 64px 64px 64px 0;
+  display: flex; flex-direction: column; gap: 32px;
+}
+/* white continues to the left edge of the viewport */
+.hero-panel::before {
+  content: ""; position: absolute; top: 0; bottom: 0;
+  left: calc(var(--gutter) * -1); width: var(--gutter);
+  background: var(--white);
+}
+.hero h1 {
+  font-weight: 800; font-size: 72px; line-height: 1.03;
+  letter-spacing: -0.035em; color: var(--graphite);
+  text-wrap: pretty;
+}
+.hero-sub { font-weight: 500; font-size: 24px; line-height: 1.4; color: var(--slate); }
+.hero-actions { display: flex; gap: 16px; align-items: center; }
+
+/* =========================================================
+   STICKY NAV (appears after the hero)
+   ========================================================= */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: var(--white);
+  box-shadow: 0 1px 0 var(--fallback), 0 8px 24px rgba(31, 34, 38, .06);
+  transform: translateY(-110%);
+  transition: transform 250ms ease;
+}
+.nav.is-visible { transform: translateY(0); }
+.nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav .logo img { width: 150px; height: 44px; }
+.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  font-size: 15px; font-weight: 600; color: var(--slate); text-decoration: none;
+  padding: 6px 0; border-bottom: 2px solid transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+.nav-links a:hover { color: var(--graphite); }
+.nav-links a.is-active { color: var(--graphite); border-bottom-color: var(--green); }
+
+/* =========================================================
+   SECTIONS — shared
+   ========================================================= */
+.section { padding: 128px 0; }
+.section-head { display: flex; flex-direction: column; gap: 24px; max-width: 760px; margin-bottom: 72px; }
+.eyebrow {
+  font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--slate);
+}
+.on-dark .eyebrow { color: var(--fallback); }
+.section h2 {
+  font-weight: 800; font-size: 56px; line-height: 1.05; letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.lead { font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--slate); max-width: 620px; }
+.on-dark .lead { color: var(--fallback); }
+
+/* ---------- Como funciona (stair steps) ---------- */
+.how { background: var(--white); }
+.steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;
+  align-items: end;
+}
+.step {
+  position: relative;
+  background: var(--offwhite);
+  border-radius: 20px;
+  padding: 40px 36px 44px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.step:nth-child(1) { margin-top: 128px; }
+.step:nth-child(2) { margin-top: 64px; }
+.step-num {
+  display: inline-block; position: relative; align-self: flex-start;
+  font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+  margin-bottom: 8px;
+}
+.step-num::before {
+  content: ""; position: absolute; left: -0.06em; right: -0.06em; bottom: 0.02em; height: 0.34em;
+  background: var(--green);
+}
+.step-num span { position: relative; }
+.step h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; }
+.step p { font-size: 17px; color: var(--slate); }
+.step--final { background: var(--graphite); color: var(--white); }
+.step--final p { color: var(--fallback); }
+.step--final .step-num { background: var(--green); color: var(--graphite); padding: 6px 10px 4px; border-radius: 8px; }
+.step--final .step-num::before { display: none; }
+.step-tag {
+  position: absolute; top: -16px; right: 28px;
+  background: var(--green); color: var(--graphite);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 8px 14px; border-radius: 8px;
+}
+.how-cta { margin-top: 64px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.how-cta p { color: var(--slate); font-weight: 500; }
+
+/* ---------- Incluso (dark) ---------- */
+.included { background: var(--graphite); color: var(--white); }
+.features {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;
+}
+.feature {
+  border: 1px solid var(--graphite-hover);
+  background: var(--graphite-hover);
+  border-radius: 20px; padding: 36px 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 200ms ease;
+}
+.feature:hover { transform: translateY(-4px); }
+.feature-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  background: var(--graphite); color: var(--green);
+  display: grid; place-items: center; margin-bottom: 8px;
+}
+.feature-icon svg { width: 26px; height: 26px; }
+.feature h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+.feature p { font-size: 16px; color: var(--fallback); }
+.feature--highlight { background: var(--green); border-color: var(--green); color: var(--graphite); }
+.feature--highlight p { color: var(--graphite); }
+.feature--highlight .feature-icon { background: var(--graphite); color: var(--green); }
+
+/* ---------- Sites feitos (portfolio) ---------- */
+.portfolio { background: var(--offwhite); }
+.portfolio-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 64px; }
+.portfolio-head .section-head { margin-bottom: 0; }
+.works {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;
+}
+.work a { display: flex; flex-direction: column; gap: 20px; text-decoration: none; color: inherit; }
+.work-frame {
+  border-radius: 16px; overflow: hidden; background: var(--fallback);
+  box-shadow: 0 1px 3px rgba(31, 34, 38, .08), 0 12px 32px rgba(31, 34, 38, .08);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.work-bar {
+  height: 36px; padding: 0 14px; background: var(--graphite);
+  display: flex; align-items: center; gap: 12px;
+}
+.work-dots { display: flex; gap: 6px; flex: none; }
+.work-dots i { width: 9px; height: 9px; border-radius: 3px; background: var(--graphite-hover); }
+.work-dots i:last-child { background: var(--green); }
+.work-url {
+  flex: 1; min-width: 0; height: 22px; border-radius: 6px; background: var(--graphite-hover);
+  color: var(--fallback); font-size: 12px; font-weight: 500; line-height: 22px; padding: 0 10px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.work-shot { aspect-ratio: 16 / 10; overflow: hidden; }
+.work-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 600ms ease; }
+.work a:hover .work-frame { transform: translateY(-6px); box-shadow: 0 1px 3px rgba(31, 34, 38, .08), 0 24px 48px rgba(31, 34, 38, .14); }
+.work a:hover .work-shot img { transform: scale(1.03); }
+.work-info { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.work-info h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
+.work-info p { font-size: 16px; color: var(--slate); margin-top: 4px; }
+.work-link {
+  flex: none; width: 44px; height: 44px; border-radius: 12px;
+  background: var(--white); box-shadow: 0 1px 3px rgba(31, 34, 38, .1); display: grid; place-items: center;
+  transition: background var(--ease);
+}
+.work-link svg { width: 18px; height: 18px; }
+.work a:hover .work-link { background: var(--green); }
+
+/* ---------- FAQ ---------- */
+.faq { background: var(--white); }
+.faq-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+.faq .section-head { margin-bottom: 0; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--fallback); }
+.faq-item:first-child { border-top: 1px solid var(--fallback); }
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 26px 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-toggle {
+  flex: none; width: 36px; height: 36px; border-radius: 10px;
+  background: var(--offwhite); position: relative; transition: background var(--ease);
+}
+.faq-toggle::before, .faq-toggle::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 14px; height: 2px; background: var(--graphite);
+  transform: translate(-50%, -50%); transition: transform 200ms ease;
+}
+.faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq-item[open] .faq-toggle { background: var(--green); }
+.faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq-item p { padding: 0 60px 28px 0; color: var(--slate); font-size: 17px; }
+
+/* ---------- Orçamento (final CTA) ---------- */
+.quote-cta { background: var(--green); color: var(--graphite); position: relative; overflow: hidden; }
+.cta-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 72px; align-items: center; }
+.cta-copy { display: flex; flex-direction: column; gap: 28px; }
+.cta-copy h2 { font-size: 64px; }
+.cta-copy .lead { color: var(--graphite); }
+.checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.checklist li { display: flex; align-items: center; gap: 14px; font-weight: 600; font-size: 18px; }
+.checklist li::before {
+  content: ""; flex: none; width: 24px; height: 24px; border-radius: 6px;
+  background: var(--graphite) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233DFF6E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+.cta-symbol { position: absolute; right: -60px; top: -60px; width: 260px; opacity: 1; pointer-events: none; }
+
+.form-card {
+  background: var(--white); border-radius: 24px; padding: 40px;
+  box-shadow: 0 24px 48px rgba(31, 34, 38, .14);
+  display: flex; flex-direction: column; gap: 20px;
+  position: relative; z-index: 1;
+}
+.form-card h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label { font-size: 14px; font-weight: 600; }
+.field input, .field select, .field textarea {
+  font: 500 16px/1.4 "Inter", system-ui, sans-serif; color: var(--graphite);
+  background: var(--offwhite);
+  border: 1px solid var(--slate); border-radius: 10px;
+  padding: 14px 16px; width: 100%;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+.field textarea { resize: vertical; min-height: 96px; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--graphite); box-shadow: 0 0 0 3px var(--green);
+}
+.field-error { font-size: 13px; font-weight: 600; color: var(--graphite); display: none; }
+.field.has-error input { border-color: var(--graphite); border-width: 2px; }
+.field.has-error .field-error { display: block; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-card .btn { width: 100%; }
+.form-note { font-size: 13px; color: var(--slate); text-align: center; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--graphite); color: var(--fallback); padding: 56px 0 40px; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.footer .logo img { width: 170px; height: 50px; }
+.footer-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.footer-links a { color: var(--white); text-decoration: none; font-size: 15px; font-weight: 500; }
+.footer-links a:hover { text-decoration: underline; text-decoration-color: var(--green); text-underline-offset: 4px; }
+.footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--graphite-hover); font-size: 14px; }
+
+/* ---------- WhatsApp float ---------- */
+.whatsapp {
+  position: fixed; right: 32px; bottom: 40px; z-index: 60;
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--graphite); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(31, 34, 38, .25);
+  transition: background var(--ease), transform var(--ease);
+}
+.whatsapp:hover { background: var(--graphite-hover); transform: scale(1.04); }
+.whatsapp svg { width: 30px; height: 30px; }
+/* over dark sections the float flips to green so it stays visible */
+.whatsapp.is-on-dark { background: var(--green); color: var(--graphite); }
+.whatsapp.is-on-dark:hover { background: var(--green-hover); }
+
+/* ---------- Reveal (below the hero only) ---------- */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease, transform 600ms ease; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .nav, .feature, .btn, .btn .arrow, .whatsapp { transition: none; }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1240px) {
+  .section h2 { font-size: 48px; }
+  .cta-copy h2 { font-size: 54px; }
+  .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1100px) {
+  :root { --gutter: 48px; }
+  .hero-panel { width: min(640px, 90vw); padding: 56px 56px 56px 0; }
+  .hero h1 { font-size: 56px; }
+  .hero-sub { font-size: 22px; }
+  .nav-links { gap: 22px; }
+  .cta-grid, .faq-grid { grid-template-columns: 1fr; gap: 48px; }
+  .cta-symbol { display: none; }
+  .section { padding: 104px 0; }
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .steps { grid-template-columns: 1fr; gap: 20px; }
+  .step:nth-child(1), .step:nth-child(2) { margin-top: 0; }
+  /* keep the "step" idea as an indent on stacked cards */
+  .step:nth-child(2) { margin-left: 24px; }
+  .step:nth-child(3) { margin-left: 48px; margin-top: 12px; }
+}
+
+@media (max-width: 768px) {
+  :root { --gutter: 24px; }
+  body { font-size: 17px; }
+
+  /* Hero stacks: header → image → panel */
+  .hero { height: auto; min-height: 0; max-height: none; overflow: visible; display: flex; flex-direction: column; }
+  .hero-header { position: static; width: 100%; height: 80px; padding: 0 var(--gutter); order: 1; }
+  .logo img { width: 160px; height: 48px; }
+  .hero-media { position: relative; width: 100%; aspect-ratio: 4 / 3; order: 2; }
+  .hero-accent { bottom: auto; top: calc(80px + 75vw - 62px); z-index: 2; }
+  .hero-panel {
+    position: relative; left: auto; top: auto; transform: none; order: 3;
+    width: 100%; margin-top: -48px;
+    border-radius: 20px 20px 0 0; padding: 32px 24px 48px; gap: 24px;
+  }
+  .hero-panel::before { display: none; }
+  .hero h1 { font-size: 40px; }
+  .hero-sub { font-size: 19px; }
+  .hero-actions, .hero-actions .btn { width: 100%; }
+
+  .nav-inner { height: 64px; }
+  .nav .logo img { width: 124px; height: 38px; }
+
+  .section { padding: 80px 0; }
+  .section-head { margin-bottom: 48px; gap: 18px; }
+  .section h2, .cta-copy h2 { font-size: 36px; }
+  .lead { font-size: 18px; }
+  .features { grid-template-columns: 1fr; }
+  .works { grid-template-columns: 1fr; gap: 40px; }
+  .portfolio-head { flex-direction: column; align-items: flex-start; margin-bottom: 48px; }
+  .portfolio-head .btn { width: 100%; }
+  .work-info h3 { font-size: 20px; }
+  .step { padding: 32px 28px 36px; }
+  .step:nth-child(2) { margin-left: 16px; }
+  .step:nth-child(3) { margin-left: 32px; }
+  .how-cta .btn { width: 100%; }
+  .faq-item summary { font-size: 18px; padding: 22px 0; }
+  .faq-item p { padding-right: 0; }
+  .form-card { padding: 28px 22px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+
+  .whatsapp { right: 20px; bottom: 24px; width: 58px; height: 58px; }
+}
+
+@media (max-width: 359px) {
+  .hero h1 { font-size: 34px; }
+  .section h2, .cta-copy h2 { font-size: 32px; }
+  .nav .btn-sm { padding: 0 14px; font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Sticky nav: slides in once the hero leaves the viewport -->
+<nav class="nav" id="nav" aria-label="Principal">
+  <div class="container nav-inner">
+    <a class="logo" href="#topo" aria-label="STEP Digital Marketing, voltar ao topo">
+      <img src="assets/step-logo-tagline.png" alt="STEP Digital Marketing" width="150" height="44">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#incluso">Incluso</a></li>
+      <li><a href="#portfolio">Sites feitos</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="#orcamento">Orçamento <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</nav>
+
+<!-- ================= HERO (1b) ================= -->
+<header class="hero" id="topo">
+  <div class="hero-media">
+    <img
+      src="assets/hero-1800.jpg"
+      srcset="assets/hero-900.jpg 900w, assets/hero-1800.jpg 1800w"
+      sizes="(max-width: 768px) 100vw, 62vw"
+      alt="Site responsivo criado pela STEP exibido em notebook, tablet e celular sobre uma mesa"
+      width="1800" height="1005" fetchpriority="high">
+  </div>
+  <div class="hero-accent" aria-hidden="true"></div>
+
+  <div class="hero-header">
+    <a class="logo" href="#topo" aria-label="STEP Digital Marketing">
+      <img src="assets/step-logo-tagline.png" alt="STEP Digital Marketing" width="190" height="56">
+    </a>
+  </div>
+
+  <div class="hero-panel">
+    <div class="marker" aria-hidden="true"><span></span><span></span></div>
+    <h1>
+      Seu site no ar
+      <span class="hl"><span><span class="e-glyph" aria-hidden="true"><i class="stem"></i><i class="arm-top"></i><i class="arm-mid"></i><i class="arm-bot"></i></span><span class="sr-only">E</span>M 7 DIAS</span></span>
+      após a aprovação do projeto
+    </h1>
+    <p class="hero-sub">Domínio incluso gratuitamente por 1&nbsp;ano</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#orcamento">Solicitar orçamento <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ================= COMO FUNCIONA ================= -->
+  <section class="section how" id="como-funciona" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="marker" aria-hidden="true"><span></span><span></span></div>
+        <p class="eyebrow">Como funciona</p>
+        <h2 id="how-title">Três passos entre a ideia e o seu site no ar</h2>
+        <p class="lead">Um processo simples e com prazo claro. Você acompanha cada etapa e sabe exatamente quando o site vai ao ar.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num"><span>01</span></span>
+          <h3>Briefing</h3>
+          <p>Uma conversa rápida para entender seu negócio, seu público e o que o site precisa entregar.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num"><span>02</span></span>
+          <h3>Projeto e aprovação</h3>
+          <p>Apresentamos a estrutura e o visual do site. Você ajusta o que quiser e aprova.</p>
+        </li>
+        <li class="step step--final reveal">
+          <span class="step-tag">7 dias</span>
+          <span class="step-num"><span>03</span></span>
+          <h3>Site no ar</h3>
+          <p>Desenvolvemos, configuramos o domínio e publicamos em até 7 dias após a aprovação.</p>
+        </li>
+      </ol>
+
+      <div class="how-cta reveal">
+        <a class="btn btn-primary" href="#orcamento">Começar meu projeto <span class="arrow" aria-hidden="true">→</span></a>
+        <p>Sem compromisso. Resposta em até 1 dia útil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= O QUE ESTÁ INCLUSO ================= -->
+  <section class="section included on-dark" id="incluso" aria-labelledby="inc-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="marker" aria-hidden="true"><span></span><span></span></div>
+        <p class="eyebrow">O que está incluso</p>
+        <h2 id="inc-title">Tudo o que seu site precisa para vender, sem surpresa no fim</h2>
+      </div>
+
+      <ul class="features">
+        <li class="feature feature--highlight reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </span>
+          <h3>Domínio grátis por 1 ano</h3>
+          <p>Registramos e configuramos o seu .com.br. Você não paga nada pelo domínio no primeiro ano.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6"/><rect x="17" y="8" width="5" height="12" rx="1.2"/></svg>
+          </span>
+          <h3>Layout responsivo</h3>
+          <p>Fica bem no celular, no tablet e no computador, que é onde seu cliente está.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+          </span>
+          <h3>Pronto para o Google</h3>
+          <p>Estrutura otimizada, títulos e descrições configurados para você ser encontrado.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          </span>
+          <h3>Botão de WhatsApp</h3>
+          <p>Seu visitante fala com você em um toque, direto da página.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+          </span>
+          <h3>Carregamento rápido</h3>
+          <p>Imagens otimizadas e código enxuto. Ninguém espera um site lento abrir.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <h3>Certificado SSL</h3>
+          <p>Cadeado de segurança ativo desde o primeiro dia, para passar confiança.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= SITES FEITOS ================= -->
+  <section class="section portfolio" id="portfolio" aria-labelledby="port-title">
+    <div class="container">
+      <div class="portfolio-head">
+        <div class="section-head reveal">
+          <div class="marker" aria-hidden="true"><span></span><span></span></div>
+          <p class="eyebrow">Sites feitos</p>
+          <h2 id="port-title">Alguns sites que a STEP já colocou no ar</h2>
+        </div>
+        <a class="btn btn-primary reveal" href="#orcamento">Quero o meu <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+
+      <ul class="works">
+        <li class="work reveal">
+          <a href="https://www.cittadinicidadania.com.br/menores" target="_blank" rel="noopener">
+            <div class="work-frame">
+              <div class="work-bar" aria-hidden="true"><span class="work-dots"><i></i><i></i></span><span class="work-url">cittadinicidadania.com.br/menores</span></div>
+              <div class="work-shot"><img src="assets/portfolio/cittadini.jpg" alt="Página da Cittadini sobre cidadania italiana para filhos menores" loading="lazy" width="1200" height="750"></div>
+            </div>
+            <div class="work-info">
+              <div><h3>Cittadini</h3><p>Assessoria em cidadania italiana</p></div>
+              <span class="work-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </li>
+        <li class="work reveal">
+          <a href="https://www.perpetualegacy.com.br/" target="_blank" rel="noopener">
+            <div class="work-frame">
+              <div class="work-bar" aria-hidden="true"><span class="work-dots"><i></i><i></i></span><span class="work-url">perpetualegacy.com.br</span></div>
+              <div class="work-shot"><img src="assets/portfolio/perpetua-legacy.jpg" alt="Site da Perpetua Legacy sobre planejamento sucessório" loading="lazy" width="1200" height="750"></div>
+            </div>
+            <div class="work-info">
+              <div><h3>Perpetua Legacy</h3><p>Planejamento sucessório e patrimonial</p></div>
+              <span class="work-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </li>
+        <li class="work reveal">
+          <a href="https://smartphonesbh.vercel.app/" target="_blank" rel="noopener">
+            <div class="work-frame">
+              <div class="work-bar" aria-hidden="true"><span class="work-dots"><i></i><i></i></span><span class="work-url">smartphonesbh.vercel.app</span></div>
+              <div class="work-shot"><img src="assets/portfolio/universal-celulares.jpg" alt="Catálogo de celulares da Universal Celulares" loading="lazy" width="1200" height="750"></div>
+            </div>
+            <div class="work-info">
+              <div><h3>Universal Celulares</h3><p>Catálogo de smartphones novos e seminovos</p></div>
+              <span class="work-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </li>
+        <li class="work reveal">
+          <a href="https://www.habiteseja.com.br/" target="_blank" rel="noopener">
+            <div class="work-frame">
+              <div class="work-bar" aria-hidden="true"><span class="work-dots"><i></i><i></i></span><span class="work-url">habiteseja.com.br</span></div>
+              <div class="work-shot"><img src="assets/portfolio/habite-se-ja.jpg" alt="Site da Habite-se Já sobre emissão do Habite-se em BH" loading="lazy" width="1200" height="750"></div>
+            </div>
+            <div class="work-info">
+              <div><h3>Habite-se Já</h3><p>Regularização de imóveis em BH e região</p></div>
+              <span class="work-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= DÚVIDAS ================= -->
+  <section class="section faq" id="duvidas" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+      <div class="section-head reveal">
+        <div class="marker" aria-hidden="true"><span></span><span></span></div>
+        <p class="eyebrow">Dúvidas frequentes</p>
+        <h2 id="faq-title">Antes de você perguntar</h2>
+        <p class="lead">Não achou sua resposta? Chame a gente no WhatsApp.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq-item" open>
+          <summary>A partir de quando contam os 7 dias?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <p>O prazo começa no dia em que você aprova o projeto (estrutura e visual) e recebemos os conteúdos: textos, fotos e logo.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O domínio fica no meu nome?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <p>Sim. O domínio é registrado em seu nome e fica com você. O primeiro ano é por nossa conta.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Posso pedir ajustes depois de aprovar?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <p>Pode. Pequenos ajustes de texto e imagem entram no projeto. Mudanças maiores de estrutura são combinadas com você antes.</p>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu ainda não tiver textos e fotos?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <p>A gente ajuda. No briefing montamos juntos o conteúdo essencial e indicamos imagens adequadas ao seu negócio.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ORÇAMENTO (final CTA) ================= -->
+  <section class="section quote-cta" id="orcamento" aria-labelledby="cta-title">
+    <svg class="cta-symbol" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M2,56 A6,6 0 0 1 8,50 L50,50 L50,92 A6,6 0 0 1 44,98 L8,98 A6,6 0 0 1 2,92 Z" fill="#1F2226"/>
+      <path d="M50,8 A6,6 0 0 1 56,2 L92,2 A6,6 0 0 1 98,8 L98,44 A6,6 0 0 1 92,50 L50,50 Z" fill="#FFFFFF"/>
+    </svg>
+    <div class="container cta-grid">
+      <div class="cta-copy reveal">
+        <h2 id="cta-title">Pronto para dar o próximo passo?</h2>
+        <p class="lead">Conte um pouco sobre o seu negócio e receba um orçamento sem compromisso.</p>
+        <ul class="checklist">
+          <li>Site no ar em 7 dias após a aprovação</li>
+          <li>Domínio incluso gratuitamente por 1 ano</li>
+          <li>Layout responsivo e pronto para o Google</li>
+        </ul>
+      </div>
+
+      <form class="form-card reveal" id="quote-form" novalidate>
+        <h3>Solicite seu orçamento</h3>
+        <div class="field">
+          <label for="f-nome">Nome</label>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+          <span class="field-error" role="alert">Informe seu nome.</span>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-whats">WhatsApp</label>
+            <input id="f-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+            <span class="field-error" role="alert">Informe um WhatsApp válido.</span>
+          </div>
+          <div class="field">
+            <label for="f-tipo">Tipo de site</label>
+            <select id="f-tipo" name="tipo">
+              <option>Site institucional</option>
+              <option>Landing page</option>
+              <option>Loja virtual</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">Sobre o seu negócio <span style="font-weight:500;color:var(--slate)">(opcional)</span></label>
+          <textarea id="f-msg" name="mensagem" rows="3"></textarea>
+        </div>
+        <button class="btn btn-dark" type="submit">Solicitar orçamento <span class="arrow" aria-hidden="true">→</span></button>
+        <p class="form-note">Ao enviar, abrimos uma conversa no WhatsApp com seus dados.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer on-dark">
+  <div class="container">
+    <div class="footer-inner">
+      <a class="logo" href="#topo" aria-label="STEP Digital Marketing, voltar ao topo">
+        <img src="assets/step-logo-tagline-negative.png" alt="STEP Digital Marketing" width="170" height="50" loading="lazy">
+      </a>
+      <ul class="footer-links">
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#incluso">O que está incluso</a></li>
+        <li><a href="#portfolio">Sites feitos</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </div>
+    <p class="footer-bottom">© <span id="year">2026</span> STEP Digital Marketing. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="whatsapp" id="whatsapp-float" href="https://wa.me/5531999382516" target="_blank" rel="noopener" aria-label="Fale com a STEP no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+(() => {
+  // Número oficial da STEP (DDI + DDD + número, só dígitos).
+  const WHATSAPP_NUMBER = '5531999382516';
+  const waLink = (text) =>
+    'https://wa.me/' + WHATSAPP_NUMBER + (text ? '?text=' + encodeURIComponent(text) : '');
+
+  document.documentElement.classList.add('js');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('whatsapp-float').href =
+    waLink('Olá, STEP! Quero saber mais sobre o site no ar em 7 dias.');
+
+  // Sticky nav appears once the hero is out of view.
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('topo');
+  new IntersectionObserver(([entry]) => {
+    nav.classList.toggle('is-visible', !entry.isIntersecting);
+  }, { rootMargin: '-96px 0px 0px 0px' }).observe(hero);
+
+  // WhatsApp float turns green while it sits over a dark section.
+  const wa = document.getElementById('whatsapp-float');
+  let waTick = false;
+  const updateWa = () => {
+    waTick = false;
+    const r = wa.getBoundingClientRect();
+    wa.style.pointerEvents = 'none';
+    const under = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    wa.style.pointerEvents = '';
+    wa.classList.toggle('is-on-dark', !!(under && under.closest('.on-dark, .step--final')));
+  };
+  addEventListener('scroll', () => { if (!waTick) { waTick = true; requestAnimationFrame(updateWa); } }, { passive: true });
+  addEventListener('resize', updateWa);
+  updateWa();
+
+  // Highlight the nav link of the section in view.
+  const links = [...document.querySelectorAll('.nav-links a')];
+  const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      links.forEach((a) => a.classList.remove('is-active'));
+      const a = byId.get(e.target.id);
+      if (a) a.classList.add('is-active');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach((s) => spy.observe(s));
+
+  // Reveal on scroll (sections below the hero only).
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); reveal.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 80 + 'ms';
+    reveal.observe(el);
+  });
+
+  // Quote form → opens WhatsApp with the filled-in details.
+  const form = document.getElementById('quote-form');
+  const setError = (input, bad) => input.closest('.field').classList.toggle('has-error', bad);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nome = form.nome.value.trim();
+    const whats = form.whatsapp.value.replace(/\D/g, '');
+    const nomeBad = nome.length < 2;
+    const whatsBad = whats.length < 10;
+    setError(form.nome, nomeBad);
+    setError(form.whatsapp, whatsBad);
+    if (nomeBad) return form.nome.focus();
+    if (whatsBad) return form.whatsapp.focus();
+
+    const lines = [
+      'Olá, STEP! Quero um orçamento.',
+      'Nome: ' + nome,
+      'WhatsApp: ' + form.whatsapp.value.trim(),
+      'Tipo de site: ' + form.tipo.value,
+    ];
+    const msg = form.mensagem.value.trim();
+    if (msg) lines.push('Sobre o negócio: ' + msg);
+    window.open(waLink(lines.join('\n')), '_blank', 'noopener');
+  });
+  form.addEventListener('input', (e) => {
+    if (e.target.closest('.field.has-error')) setError(e.target, false);
+  });
+
+  // Light phone mask: (00) 00000-0000
+  form.whatsapp.addEventListener('input', (e) => {
+    const d = e.target.value.replace(/\D/g, '').slice(0, 11);
+    let out = d;
+    if (d.length > 2) out = '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    if (d.length > 7) out = '(' + d.slice(0, 2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4);
+    e.target.value = out;
+  });
+})();
+</script>
+</body>
+</html>
